@@ -7,11 +7,11 @@ public class Quizgame {
         int score = 0;
 
         Question[] questions = new Question[]{
-            new Question("Who is the OOP course teacher of ICT-20?", "a. Zia Sir  \nb. Badrul Sir  \nc. Bikash Sir", 'a'),
+            new Question("Independence day of Bangladesh?", "a. 26 March  \nb. 21 February  \nc. 16 December ", 'a'),
             new Question("123 + 448 = ?", "a. 561  \nb. 571  \nc. 671", 'b'),
-            new Question("Students of ICT-20 are currently in _____ year", "a. 1st  \nb. 2nd  \nc. 3rd", 'b'),
+            new Question("Manchester Mark 1 is the ___ computer.", "a. 1st  \nb. 2nd  \nc. 3rd", 'b'),
             new Question("What is the regular class time of ICT-20?", "a. 10am-12pm  \nb. 9am-2pm  \nc. 9am-4pm", 'c'),
-            new Question("What is the session of ICT-20?", "a. 21-22  \nb. 22-23  \nc. 24-25", 'b'),
+            new Question("12^2 = ?", "a. 111  \nb. 144  \nc. 140", 'b')
         };
         for(int i = 0;i < questions.length; i++)
         {
