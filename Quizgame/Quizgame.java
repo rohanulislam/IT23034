@@ -11,7 +11,7 @@ public class Quizgame {
             new Question("123 + 448 = ?", "a. 561  \nb. 571  \nc. 671", 'b'),
             new Question("Students of ICT-20 are currently in _____ year", "a. 1st  \nb. 2nd  \nc. 3rd", 'b'),
             new Question("What is the regular class time of ICT-20?", "a. 10am-12pm  \nb. 9am-2pm  \nc. 9am-4pm", 'c'),
-            new Question("Current semester of ICT-20 is full of _____", "a. Para  \nb. Chill  \nc. Both a and b", 'a'),
+            new Question("What is the session of ICT-20?", "a. 21-22  \nb. 22-23  \nc. 24-25", 'b'),
         };
         for(int i = 0;i < questions.length; i++)
         {
