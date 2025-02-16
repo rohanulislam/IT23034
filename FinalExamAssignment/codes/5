@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class Main{
+    public static int array(int[] num)
+    {
+        int sum=0;
+        int i;
+        for(i=0;i<num.length;i++)sum+=num[i];
+        return sum;
+    }
+    public static void main(String[] args)
+    {
+        Scanner scan =new Scanner(System.in);
+        int i,n=scan.nextInt();
+        int[] arr=new int[n];
+        for(i=0;i<n;i++)
+        {
+            arr[i]=scan.nextInt();
+        }
+        System.out.println(Main.array(arr));
+    }
+}
