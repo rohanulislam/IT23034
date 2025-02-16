@@ -1,0 +1,24 @@
+import java.io.*;
+import java.util.*;
+
+public class Sumfile{
+    public static void main(String[] args) throws IOException {
+        Scanner sc = new Scanner(new File("input.txt"));
+// scan.useDelimiter(",");
+
+        int highest = Integer.MIN_VALUE;
+        while (sc.hasNext()) {
+            int num = sc.nextInt();
+            if (num > highest) {
+                highest = num;
+            }
+        }
+        sc.close();
+
+        int sum = highest * (highest + 1) / 2;
+
+         PrintWriter writer = new PrintWriter(new File("output.txt", true)); 
+        writer.print(sum+",");
+        writer.close();
+    } 
+}
