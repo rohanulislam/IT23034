@@ -1,0 +1,27 @@
+import java.util.Scanner;
+class Circle_25 {
+    private double radius;
+
+    public void setRadius(double radius) throws IllegalArgumentException {
+        if (radius < 0) {
+            throw new IllegalArgumentException("Radius cannot be negative");
+        }
+        this.radius = radius;
+    }
+
+    public double getArea() {
+        return Math.PI * radius * radius;
+    }
+
+    public static void main(String[] args) {
+        Circle_25 circle = new Circle_25();
+        Scanner scan=new Scanner(System.in);
+        try {
+            int rad=scan.nextInt();
+            circle.setRadius(rad);
+            System.out.println("Area: " + circle.getArea());
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+}
