@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+public class DivisionRemainder_30 {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter the size of array1 (greater than 20): ");
+        int n = scanner.nextInt();
+        if (n <= 20) {
+            System.out.println("The size of array1 should be greater than 20.");
+            return;
+        }
+        int[] array1 = new int[n];
+        System.out.println("Enter " + n + " elements for array1:");
+        for (int i = 0; i < n; i++) {
+            array1[i] = scanner.nextInt();
+        }
+
+        int m = (int) Math.ceil((double) n / 10);
+        int[] array2 = new int[m];
+        System.out.println("Enter " + m + " elements for array2:");
+        for (int i = 0; i < m; i++) {
+            array2[i] = scanner.nextInt();
+        }
+        System.out.println("Array1: ");
+        for (int i : array1) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+        
+        System.out.println("Array2: ");
+        for (int i : array2) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+        for (int i = 0; i < array1.length; i++) {
+            for(int j=0;j < array2.length; j++)
+            {
+            int quotient = array1[i] / array2[j];
+            int remainder = array1[i] % array2[j];
+            System.out.println("Element " + array1[i] + " divided by " + array2[j] +
+                    " gives: Quotient (Ceil) = " + quotient + ", Remainder = " + remainder);
+            }
+        }
+        
+        scanner.close();
+    }
+}
