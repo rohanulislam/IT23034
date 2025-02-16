@@ -1,0 +1,28 @@
+class Animal {
+    public void sound() {
+        System.out.println("Animal makes a sound");
+    }
+    
+    public static void staticMethod() {
+        System.out.println("Static method in Animal");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    public void sound() {
+        System.out.println("Dog barks");
+    }
+
+    public static void staticMethod() {
+        System.out.println("Static method in Dog");
+    }
+}
+
+public class BindingExample {
+    public static void main(String[] args) {
+        Animal animal = new Dog();
+        animal.sound(); // Dynamic binding
+        animal.staticMethod(); // Static binding
+    }
+}
