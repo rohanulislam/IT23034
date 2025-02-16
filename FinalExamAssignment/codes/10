@@ -1,0 +1,53 @@
+import java.util.Scanner;
+
+public class Pallindrome_10 {
+    
+    // Method to check if a number is palindrome
+    public static boolean isNumberPalindrome(int num) {
+        int original = num, reversed = 0;
+        while (num > 0) {
+            int digit = num % 10;  // Extract last digit
+            reversed = reversed * 10 + digit;  // Build reversed number
+            num /= 10;  // Remove last digit
+        }
+        return original == reversed;
+    }
+
+    // Method to check if a string is palindrome
+    public static boolean isStringPalindrome(String str) {
+        int left = 0, right = str.length() - 1;
+        while (left < right) {
+            if (str.charAt(left) != str.charAt(right)) {
+                return false;
+            }
+            left++;
+            right--;
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        // Checking a number
+        System.out.print("Enter a number: ");
+        int num = scan.nextInt();
+        if (isNumberPalindrome(num)) {
+            System.out.println(num + " is a palindrome.");
+        } else {
+            System.out.println(num + " is not a palindrome.");
+        }
+
+        scan.nextLine(); // Consume newline character
+
+        // Checking a string
+        System.out.print("Enter a string: ");
+        String str = scan.nextLine();
+        if (isStringPalindrome(str)) {
+            System.out.println(str + " is a palindrome.");
+        } else {
+            System.out.println(str + " is not a palindrome.");
+        }
+
+    }
+}
