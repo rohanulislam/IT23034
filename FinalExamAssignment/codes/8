@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class character_8 {
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.print("Enter a character: ");
+        String s=scan.nextLine();
+        char ch = s.charAt(0);
+        if (Character.isLetter(ch)) {
+            System.out.println(ch + " is a letter.");
+        } else if (Character.isDigit(ch)) {
+            System.out.println(ch + " is a digit.");
+        } else if (Character.isWhitespace(ch)) {
+            System.out.println("You entered a whitespace character.");
+        } else {
+            System.out.println(ch + " is a special character.");
+        }
+
+        scan.close();
+    }
+}
