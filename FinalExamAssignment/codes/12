@@ -1,0 +1,76 @@
+class BaseClass {
+    void printResult(String message, double result) {
+        System.out.println(message + result);
+    }
+}
+
+// Class to Compute Sum of Series: 1 + 0.9 + 0.8 + ... + 0.1
+class SumClass extends BaseClass {
+    double computeSum() {
+        double sum = 0;
+        for (double i = 1.0; i >= 0.1; i -= 0.1) {
+            sum += i;
+        }
+        return sum;
+    }
+}
+
+// Class to Find GCD and LCM of Two Numbers
+class DivisorMultipleClass extends BaseClass {
+    int gcd(int a, int b) {
+        while (b != 0) {
+            int temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return a;
+    }
+
+    int lcm(int a, int b) {
+        return (a * b) / gcd(a, b);
+    }
+}
+
+// Class to Convert Numbers Between Binary, Decimal, Hexadecimal, and Octal
+class NumberConversionClass extends BaseClass {
+    void convertNumber(int number) {
+        System.out.println("Binary: " + Integer.toBinaryString(number));
+        System.out.println("Octal: " + Integer.toOctalString(number));
+        System.out.println("Hexadecimal: " + Integer.toHexString(number).toUpperCase());
+    }
+}
+
+// Custom Print Class
+class CustomPrintClass {
+    void pr(String message) {
+        System.out.println(">>> " + message + " <<<");
+    }
+}
+
+// Main Class to Execute All Methods
+public class MainClass {
+    public static void main(String[] args) {
+        // Object for SumClass
+        SumClass sumObj = new SumClass();
+        double sum = sumObj.computeSum();
+        sumObj.printResult("Sum of series: ", sum);
+
+        // Object for DivisorMultipleClass
+        DivisorMultipleClass divMulObj = new DivisorMultipleClass();
+        int num1 = 24, num2 = 36;
+        int gcd = divMulObj.gcd(num1, num2);
+        int lcm = divMulObj.lcm(num1, num2);
+        divMulObj.printResult("GCD of " + num1 + " and " + num2 + ": ", gcd);
+        divMulObj.printResult("LCM of " + num1 + " and " + num2 + ": ", lcm);
+
+        // Object for NumberConversionClass
+        NumberConversionClass numConvObj = new NumberConversionClass();
+        int number = 27;
+        System.out.println("Conversions for number: " + number);
+        numConvObj.convertNumber(number);
+
+        // Object for CustomPrintClass
+        CustomPrintClass printObj = new CustomPrintClass();
+        printObj.pr("Java Inheritance Program Completed");
+    }
+}
