@@ -1,0 +1,14 @@
+class Example {
+    static int staticvar a=2;
+    int instanceVar = 10;
+
+    void display() {
+        int localVar = 20;
+        System.out.println(instanceVar + localVar);
+    }
+
+    public static void main(String[] args) {
+        Example obj = new Example();
+        obj.display();
+    }
+}
