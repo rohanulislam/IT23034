@@ -1,0 +1,39 @@
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class CustomRandomGenerator {
+    private static int[] predefinedArray;
+    static int maxValue;
+    public static int[] myRand(int n) {
+        return myRand(n,maxValue);
+    }
+
+    public static int[] myRand(int n, int maxValue) {
+        int[] randomNumbers = new int[n];
+        long currentTime = System.currentTimeMillis();
+
+        for (int i = 0; i < n; i++) {
+            int index = i % predefinedArray.length;
+            randomNumbers[i] = (int) ((currentTime * predefinedArray[index]) % maxValue);
+        }
+
+        return randomNumbers;
+    }
+
+    public static void main(String[] args) {
+        System.out.println("Enter maxValue and arraysize:");
+        Scanner scan = new Scanner(System.in);
+        maxValue=scan.nextInt();
+        int n=scan.nextInt();
+        predefinedArray=new int[n];
+        System.out.println("Enter predefined array:");
+        for(int i=0;i<n;i++)
+        {
+            predefinedArray[i]=scan.nextInt();
+        }
+        int[] randomNumbers = CustomRandomGenerator.myRand(n);
+        System.out.println("Random Numbers: " );
+        for(int i=0;i<n;i++)
+        System.err.print(randomNumbers[i]+",");
+    }
+}
