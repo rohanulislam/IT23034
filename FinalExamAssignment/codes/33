@@ -1,0 +1,36 @@
+public class Main {
+
+    public static void main(String[] args) {
+        int x = findExtreme("smallest", 5, 2, 9, 1);
+        int y = findExtreme("largest", 8, 3, 10, 4);
+
+        System.out.println("Smallest: " + x);
+        System.out.println("Largest: " + y);
+    }
+
+    public static int findExtreme(String type, int... numbers) {
+        // Check if no numbers are provided
+        if (numbers.length == 0) {
+            throw new IllegalArgumentException("At least one number is required");
+        }
+
+        // Initialize extreme value based on "type"
+        int extreme = numbers[0];  // Start with the first number
+
+        for (int num : numbers) {
+            if ("smallest".equals(type)) {
+                if (num < extreme) {
+                    extreme = num;  // Update if current number is smaller
+                }
+            } else if ("largest".equals(type)) {
+                if (num > extreme) {
+                    extreme = num;  // Update if current number is larger
+                }
+            } else {
+                throw new IllegalArgumentException("Invalid type. Use 'smallest' or 'largest'.");
+            }
+        }
+        
+        return extreme;
+    }
+}
